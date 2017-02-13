@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
+import ScoreBoard from './components/ScoreBoard';
 import './index.css';
 
 ReactDOM.render(
-  <App />,
+  <ScoreBoard />,
   document.getElementById('root')
 );
