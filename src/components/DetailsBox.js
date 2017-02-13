@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
-
+import ScoreTable from './ScoreTable';
+import TeamSelector from './TeamSelector';
+import BatterTable from './BatterTable';
 
 class DetailsBox extends Component {
   constructor(props) {

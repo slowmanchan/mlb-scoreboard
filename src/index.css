@@ -45,8 +45,7 @@ input {
 }
 
 #teamSelector {
-  width: 200px;
-  margin: auto;
+  text-align: center;
   margin-bottom: 20px;
 }
 

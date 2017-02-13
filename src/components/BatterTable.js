@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import BatterRow from './BatterRow';
 
 class BatterTable extends Component {
   render() {

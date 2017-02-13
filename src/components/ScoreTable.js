@@ -1,4 +1,7 @@
 import React, {Component} from 'react';
+import ScoreHeadingsRow from './ScoreHeadingsRow';
+import HomeRow from './HomeRow';
+import AwayRow from './AwayRow';
 
 class ScoreTable extends Component {
   render() {

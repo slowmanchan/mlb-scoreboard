@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import DetailsButton from './DetailsButton';
 
 class Scores extends Component {
 
