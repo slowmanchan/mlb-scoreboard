@@ -52,3 +52,11 @@ input {
 #teamSelector, button {
   font-size: 1em;
 }
+
+#emptyGames {
+  padding: 20px;
+}
+
+#dateSelector, #mainHeading, #emptyGames  {
+  text-align: center;
+}
