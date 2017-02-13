@@ -1,24 +1,35 @@
-import React, {Component} from 'react';
+import React, { Component, PropTypes } from 'react';
 
 class TeamSelector extends Component {
   constructor(props) {
     super(props);
-    this.handleClick.bind(this);
-  }
-
-  handleClick(e, x) {
-    this.props.handleTeamToggle(x)
   }
 
   render() {
+    const { handleTeamToggle, details } = this.props;
+
     return (
       <div id="teamSelector">
-        <button onClick={() => {this.props.handleTeamToggle(0)}}>{this.props.details.home_sname}</button>
+        <button
+          onClick={() => { handleTeamToggle(0); }}
+        >
+          {details.home_sname}
+        </button>
 
-        <button onClick={() => {this.props.handleTeamToggle(1)}}>{this.props.details.away_sname}</button>
+        <button
+          onClick={() => { handleTeamToggle(1); }}
+        >
+          {details.away_sname}
+        </button>
       </div>
-    )
+    );
   }
 }
 
+TeamSelector.propTypes = {
+  details: PropTypes.shape({
+    home_sname: PropTypes.string,
+    away_sname: PropTypes.string,
+  }),
+};
 export default TeamSelector;

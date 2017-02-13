@@ -23,13 +23,12 @@ class DetailsButton extends Component {
 
     gameDayString = "year_" + year + "/month_" + month + "/day_" + day + "/gid_" + this.props.gameday;
 
-    console.log(gameDayString);
     axios.get(`http://gd2.mlb.com/components/game/mlb/${gameDayString}/boxscore.json`)
       .then((res) => {
         this.props.handleDetailsUpdate(res.data.data.boxscore)
       })
       .catch((error) => {
-        console.log(error.response)
+        console.log(error)
       })
   }
 
@@ -43,7 +42,6 @@ class DetailsButton extends Component {
   }
 
   render() {
-    console.log("---" + this.props.linescore)
     return (
       <div>
       <button onClick={this.clickHandler}>details</button>

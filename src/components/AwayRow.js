@@ -10,8 +10,8 @@ class AwayRow extends Component {
       away_team_errors
     } = this.props.linescore;
 
-    inning_line_score.forEach((inning) => {
-      rows.push(<td>{inning.away}</td>)
+    inning_line_score.forEach((inning, idx) => {
+      rows.push(<td key={`inningaway${idx}`}>{inning.away}</td>)
     })
 
     return (

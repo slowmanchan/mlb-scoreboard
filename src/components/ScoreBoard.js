@@ -21,7 +21,7 @@ class ScoreBoard extends Component {
 
   handleDetailsUpdate(details) {
     this.setState({
-      details,
+      details: details
     });
   }
 
@@ -43,7 +43,7 @@ class ScoreBoard extends Component {
           // blank linescore
 
           games = games.map((game) => {
-            const gameCopy = Object.assign({}, game);
+            let gameCopy = Object.assign({}, game);
 
             if (!gameCopy.hasOwnProperty('linescore')) {
               gameCopy.linescore = {

@@ -5,8 +5,8 @@ class ScoreHeadingsRow extends Component {
     var cols = []
     let {inning_line_score} = this.props.linescore;
 
-    inning_line_score.forEach((col) => {
-      cols.push(<th>{col.inning}</th>)
+    inning_line_score.forEach((col, idx) => {
+      cols.push(<th key={`scoreheading${idx}`}>{col.inning}</th>)
     })
 
      return (

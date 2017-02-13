@@ -10,8 +10,8 @@ class HomeRow extends Component {
       inning_line_score
     } = this.props.linescore;
 
-    inning_line_score.forEach((inning) => {
-      cols.push(<td>{inning.home}</td>)
+    inning_line_score.forEach((inning, idx) => {
+      cols.push(<td key={`inning${idx}`}>{inning.home}</td>)
     })
 
     return (
