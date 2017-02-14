@@ -25,7 +25,6 @@ class DetailsBox extends Component {
   render() {
     return (
       <div className="detailsBox">
-        <h3>Details</h3>
         <ScoreTable data={this.props.details} />
         <TeamSelector
           handleTeamToggle={this.handleTeamToggle}
