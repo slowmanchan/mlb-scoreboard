@@ -1,12 +1,15 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import BatterRow from './BatterRow';
-
+/*
+ * Component responsible for rendering the batter stats table
+ * creates a row of batter components and pass a batter object to each
+ */
 class BatterTable extends Component {
   render() {
     var rows = [];
 
-    this.props.details.batting[(this.props.teamIndex)].batter.forEach((batter) => {
-      rows.push(<BatterRow batter={batter}/>)
+    this.props.details.batting[(this.props.teamIndex)].batter.forEach((batter, idx) => {
+      rows.push(<BatterRow batter={batter} key={idx}/>)
     })
 
     return (

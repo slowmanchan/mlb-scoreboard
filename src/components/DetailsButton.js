@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component, PropTypes } from 'react';
 import axios from 'axios';
 import DetailsBox from './DetailsBox';
 
@@ -6,7 +6,7 @@ class DetailsButton extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      boxscore: []
+      boxscore: [],
     }
 
     this.clickHandler = this.clickHandler.bind(this);
@@ -28,7 +28,7 @@ class DetailsButton extends Component {
         this.props.handleDetailsUpdate(res.data.data.boxscore)
       })
       .catch((error) => {
-        console.log(error)
+        window.alert('No boxscore data found')
       })
   }
 

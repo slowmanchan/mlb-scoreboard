@@ -42,7 +42,7 @@ class Scores extends Component {
               <td>{linescore.r.away}</td>
             </tr>
             <tr>
-              <td>{status.status == 'Final' || status.status == "Completed Early" ? <DetailsButton linescore={this.props.data.linescore} gameday={this.props.gameday} handleDetailsUpdate={this.props.handleDetailsUpdate} home_sport_code={home_sport_code} home={home_code} away={away_code} away_sport_code={away_sport_code} date={this.props.date}/> : <div>&nbsp;</div>}</td>
+              <td><DetailsButton linescore={this.props.data.linescore} gameday={this.props.gameday} handleDetailsUpdate={this.props.handleDetailsUpdate} home={home_code} away={away_code} /></td>
             </tr>
           </tbody>
       </table>

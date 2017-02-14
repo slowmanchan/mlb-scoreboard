@@ -1,5 +1,8 @@
-import React, {Component} from 'react';
-
+import React, { Component } from 'react';
+/*
+ * Component responsible for creating rows for the batter stats
+ * takes a batter object and render the various batter stats
+ */
 class BatterRow extends Component {
   render() {
     const {

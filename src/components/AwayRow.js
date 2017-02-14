@@ -1,9 +1,12 @@
-import React, {Component} from 'react';
-
+import React, { Component, PropTypes } from 'react';
+/*
+ * this component render the rows for the away team
+ * in the stats detail boxscore
+ */
 class AwayRow extends Component {
   render() {
-    var rows = []
-    let {
+    const rows = []
+    const {
       inning_line_score,
       away_team_runs,
       away_team_hits,
@@ -26,4 +29,10 @@ class AwayRow extends Component {
   }
 }
 
+AwayRow.propTypes = {
+  inning_line_score: PropTypes.object,
+  away_team_runs: PropTypes.string,
+  away_team_hits: PropTypes.string,
+  away_team_errors: PropTypes.string,
+};
 export default AwayRow;

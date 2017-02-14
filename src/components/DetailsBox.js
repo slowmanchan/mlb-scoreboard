@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component, PropTypes } from 'react';
 import ScoreTable from './ScoreTable';
 import TeamSelector from './TeamSelector';
 import BatterTable from './BatterTable';
@@ -8,28 +8,39 @@ class DetailsBox extends Component {
     super(props);
     this.state = {
       games: [],
-      teamIndex: 0
-    }
-    this.handleTeamToggle = this.handleTeamToggle.bind(this)
+      teamIndex: 0,
+    };
+    this.handleTeamToggle = this.handleTeamToggle.bind(this);
   }
-
+  /*
+   * accepts and sets the state to an integer pass in from team selector
+   * component
+   */
   handleTeamToggle(team) {
     this.setState({
-      teamIndex: team
-    })
+      teamIndex: team,
+    });
   }
 
   render() {
-    console.log("++" + this.state.teamIndex)
     return (
       <div className="detailsBox">
         <h3>Details</h3>
-        <ScoreTable data={this.props.details} linescore={this.props.linescore} />
-        <TeamSelector handleTeamToggle={this.handleTeamToggle} details={this.props.details}/>
-        <BatterTable teamIndex={this.state.teamIndex} details={this.props.details} />
+        <ScoreTable data={this.props.details} />
+        <TeamSelector
+          handleTeamToggle={this.handleTeamToggle}
+          details={this.props.details}
+        />
+        <BatterTable
+          teamIndex={this.state.teamIndex}
+          details={this.props.details}
+        />
       </div>
-    )
+    );
   }
 }
 
-export default DetailsBox
+DetailsBox.propTypes = {
+  details: PropTypes.object,
+};
+export default DetailsBox;
