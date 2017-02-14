@@ -1,18 +1,22 @@
-import React, {Component} from 'react';
-
+import React, { Component } from 'react';
+/*
+ * component that generates rows for the home side
+ * Each col combined into a row and returned to
+ * score table
+ */
 class HomeRow extends Component {
   render() {
-    var cols = []
+    const cols = []
     let {
       home_team_runs,
       home_team_hits,
       home_team_errors,
       inning_line_score
     } = this.props.linescore;
-
+    // generates a score column for each inning
     inning_line_score.forEach((inning, idx) => {
       cols.push(<td key={`inning${idx}`}>{inning.home}</td>)
-    })
+    });
 
     return (
       <tr>
@@ -22,7 +26,7 @@ class HomeRow extends Component {
         <td>{home_team_hits}</td>
         <td>{home_team_errors}</td>
       </tr>
-    )
+    );
   }
 }
 

@@ -1,5 +1,9 @@
 import React, { PropTypes } from 'react';
-
+/*
+ * This component is for selecting a teams batters
+ * both buttons will set the team state depending
+ * on which is pressed.
+ */
 const TeamSelector = ({ handleTeamToggle, details }) => (
   <div id="teamSelector">
     <button

@@ -6,11 +6,11 @@ import BatterRow from './BatterRow';
  */
 class BatterTable extends Component {
   render() {
-    var rows = [];
+    const rows = [];
 
     this.props.details.batting[(this.props.teamIndex)].batter.forEach((batter, idx) => {
-      rows.push(<BatterRow batter={batter} key={idx}/>)
-    })
+      rows.push(<BatterRow batter={batter} key={idx} />)
+    });
 
     return (
       <table id="batterTable">

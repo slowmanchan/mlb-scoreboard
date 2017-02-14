@@ -26,7 +26,6 @@ class ScoreBoard extends Component {
       noGameData: true,
       details: null,
     };
-    // bind methods to component instances
     this.fetchData = this.fetchData.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.handleDetailsUpdate = this.handleDetailsUpdate.bind(this);
@@ -58,15 +57,11 @@ class ScoreBoard extends Component {
          */
         const { game } = res.data.data.games;
 
-        // If either one game object or an array of objects is returned,
         if (game) {
-          // Creating a temp variable to hold the array of games
           let games;
-          // if just one game object exsits, coerce into an array
           if (typeof game.length === 'undefined') {
             games = [game];
           } else {
-            // if an array of objects then store it as is in the games array
             games = game;
           }
 
@@ -77,9 +72,7 @@ class ScoreBoard extends Component {
            */
           games = games.map((game) => {
             let gameCopy = Object.assign({}, game);
-            // check to see if the copied game object has a linescore object
             if (!gameCopy.hasOwnProperty('linescore')) {
-              // if not, assign a linescore object with empty values
               gameCopy.linescore = {
                 r: {
                   home: '',
@@ -87,7 +80,6 @@ class ScoreBoard extends Component {
                 },
               };
             }
-            // In all other cases we should return the game copy object as is
             return gameCopy;
           });
           /*
@@ -99,16 +91,12 @@ class ScoreBoard extends Component {
           let gamesToronto = [];
           const gamesNotToronto = [];
           games.forEach((game) => {
-            // check if tor is the away team or the home team
             if (game.away_code === 'tor' || game.home_code === 'tor') {
-              // push if found, to the gamesToronto array
               gamesToronto.push(game);
             } else {
-              // if not, push it to the non toronto games array
               gamesNotToronto.push(game);
             }
           });
-          // merge the arrays into one array
           gamesToronto = gamesToronto.concat(gamesNotToronto);
           /*
            * finally set the state of games with the reordered array and set the
@@ -129,7 +117,6 @@ class ScoreBoard extends Component {
           });
         }
       })
-      // if no data was found then initialize the games array and set noGameDat to true
       .catch(() => {
         this.setState({
           games: [],
@@ -184,11 +171,6 @@ class ScoreBoard extends Component {
     });
 
     return (
-      /*
-       * present the heading, the data selector and includes a check to see we
-       * should list "no game data" also has a check to see if
-       * we should render the details button
-       */
       <div>
         <h1 id="mainHeading">Mlb Score Board</h1>
         <DateSelector handleChange={this.handleChange} />

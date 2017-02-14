@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 /*
  * Component responsible for creating rows for the batter stats
  * takes a batter object and render the various batter stats
@@ -21,8 +21,21 @@ class BatterRow extends Component {
         <td>{so}</td>
         <td>{avg}</td>
       </tr>
-    )
+    );
   }
 }
+
+BatterRow.propTypes = {
+  batter: PropTypes.object,
+  name_display_first_last: PropTypes.string,
+  ab: PropTypes.string,
+  r: PropTypes.string,
+  h: PropTypes.string,
+  rbi: PropTypes.string,
+  bb: PropTypes.string,
+  hr: PropTypes.string,
+  so: PropTypes.string,
+  avg: PropTypes.string,
+};
 
 export default BatterRow;

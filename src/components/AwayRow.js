@@ -15,7 +15,7 @@ class AwayRow extends Component {
 
     inning_line_score.forEach((inning, idx) => {
       rows.push(<td key={`inningaway${idx}`}>{inning.away}</td>)
-    })
+    });
 
     return (
       <tr>
@@ -25,7 +25,7 @@ class AwayRow extends Component {
         <td>{away_team_hits}</td>
         <td>{away_team_errors}</td>
       </tr>
-    )
+    );
   }
 }
 

@@ -14,7 +14,7 @@ class DetailsBox extends Component {
   }
   /*
    * accepts and sets the state to an integer pass in from team selector
-   * component
+   * component so that the selector can render the correct batter info
    */
   handleTeamToggle(team) {
     this.setState({
